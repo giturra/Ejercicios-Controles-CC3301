@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "calzar.h"
+
+int calzar(Nodo *a, Nodo **ppat) {
+  ... implemente aca la funcion calzar ...
+}
