@@ -1,0 +1,4 @@
+alimento:sustancia ingerida por un ser vivo:                                   
+casa:edificacion construida para ser habitada:                                 
+embarcacion:todo tipo de artilugio capaz de navegar sobre o bajo el agua:      
+lluvia:condensacion del vapor de agua contenida en las nubes:                  
