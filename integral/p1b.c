@@ -2,6 +2,13 @@
 
 /* estas funciones aparecen en el enunciado y las necesitara */
 
+typedef struct {
+  double xi, xf;
+  int n;
+} Param;
+
+double integral_g_dx_aux(void *ptr, double y);
+
 double g_aux(void *ptr, double x) {
  double y= *(double *)ptr;
  return g(x, y);
@@ -34,13 +41,19 @@ double integral_g_dx(double xi, double xf, double y, int n) {
  * xi, xf y n que se necesitan en integral_g_dx_aux.
  */
 
-double integral_g_dx_dy(double xi, double xf, int n,
-                        double yi, double yf, int m) {
-	return 0.0;
+double integral_g_dx_aux(void *ptr, double y) {
+	Param *pa = (Param*)ptr;
+	return integral(g_aux, &y, pa->xi, pa->xf, pa->n);
 }
 
-typedef struct {
-  double xi, xf;
-  int n;
-} Param;
+double integral_g_dx_dy(double xi, double xf, int n,
+                        double yi, double yf, int m) {
+	Param p;
+	p.xi = xi;
+	p.xf = xf;
+	p.n = n;
+	return integral(integral_g_dx_aux, &p, yi, yf, m);
+}
+
+
 

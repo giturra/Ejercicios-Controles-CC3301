@@ -9,7 +9,6 @@ double integral(Funcion f, void *p, double xi, double xf, int n) {
 	double sum = 0.0;
 	int k = 1;
 	for (; k < n; ++k) {
-		//printf("%d\n", k);
 		sum += f(p, xi + k*h);
 	}
 	double result = h*(t + sum);
