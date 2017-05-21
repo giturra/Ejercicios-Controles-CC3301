@@ -8,7 +8,6 @@ int buscar(void *a, int n, void *x, Comparador cmp) {
 	while (inicio <= final) {
 		centro = ((final - inicio)/2) + inicio;
 		int valor = cmp(a, centro, x);
-		//printf("%d\n", valor);
 		if (valor == 0) {
 			return centro;
 		} 
