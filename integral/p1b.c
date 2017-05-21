@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "integral.h"
 
 /* estas funciones aparecen en el enunciado y las necesitara */
@@ -54,6 +55,7 @@ double integral_g_dx_dy(double xi, double xf, int n,
 	p.n = n;
 	return integral(integral_g_dx_aux, &p, yi, yf, m);
 }
+
 
 
 
