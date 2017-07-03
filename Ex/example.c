@@ -1,18 +1,25 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int priority[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+#include "abb.h"
 
-int checkMajorPriority(int p) {
-  for(int i = p + 1; i < 10; ++i) {
-    if (priority[i] > 0) {
-      return 1;
-    }
-  }
-  return 0;
+static Nodo u[]= {
+  {'a', NULL, NULL},
+  {'b', NULL, NULL},
+  {'c', NULL, NULL},
+  {'d', NULL, NULL},
+  {'e', NULL, NULL},
+  {'f', NULL, NULL},
+  {'g', NULL, NULL},
+  {'h', NULL, NULL}};
+
+Nodo *abb(Nodo *a, int i, int j) {
+	Nodo *node = a+1;
+	printf("%c\n", node->x);
+	return NULL;  
 }
 
 int main() {
-	printf("%d\n", checkMajorPriority(1));
+	abb(u,0,7);
 	return 0;
 }
